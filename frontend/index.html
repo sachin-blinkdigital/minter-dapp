@@ -1,217 +1,641 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CodeCats</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="images/x-icon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="images/x-icon/favicon-32x32.png"
+    <title>Crypto Runners</title>
+    <meta
+      name="description"
+      content="Collection of 10,000 NFTs created by a design house in India specialising in digital art and carpet manufacturing, aiming to initiate a charity for artisans."
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="images/x-icon/favicon-16x16.png"
+      href="./images/favicon.ico"
     />
-    <link rel="manifest" href="images/x-icon/site.webmanifest" />
-    <link rel="stylesheet" href="css/three-dots.min.css" />
-    <link rel="stylesheet" href="css/splide.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/modal.css" />
+    <link rel="stylesheet" href="./css/three-dots.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <header>
-      <div class="container">
-        <div class="logo">
-          <a href="/">
-            <img src="images/x-icon/favicon-32x32.png" alt="logo" />
-          </a>
-        </div>
-        <div class="menu">
-          <a
-            href="https://discord.gg/A9CnsVzzkZ"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="images/header/discord.webp" alt="Discord" />
-          </a>
-          <a
-            href="https://twitter.com/codeSTACKr"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="images/header/twitter.webp" alt="Twitter" />
-          </a>
-          <a
-            href="https://opensea.io/collection/codecats"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="images/header/opensea.webp" alt="Opensea" />
-          </a>
-          <button class="wallet-btn btn" id="connectWallet">
-            <span>Connect Wallet</span>
-          </button>
-        </div>
-      </div>
-    </header>
+    <header id="navbar">
+      <nav class="navbar-container container">
+        <a href="/" class="home-link">
+          <div class="navbar-logo">
+            <img
+              src="./images/Logo-min.png"
+              alt="Crypto Runner"
+              class="img-responsive"
+            />
+          </div>
+        </a>
 
-    <section class="container not-connected">
-      <div>
-        <h2 id="welcomeH2">Connect to MetaMask to Get Started</h2>
-        <h1 id="welcomeH1">Welcome to the CodeCats NFT Project!</h1>
-        <p id="welcomeP">
-          The CodeCats NFT Project is a decentralized, open-source project that aims to demonstrate how to develope and launch your own NFT Collection. Follow step by step on the <a href="https://youtube.com/codestackr"  target="_blank" rel="noopener noreferrer">codeSTACKr</a> YouTube channel.
-        </p>
-      </div>
-    </section>
-
-    <section class="container">
-      <div class="countdown card">
-        <div id="countdown">
-          <ul class="count-down" data-date="">
-            <li class="clock-item">
-              <span class="count-number days">20</span>
-              <p class="count-text">Days</p>
+        <button
+          type="button"
+          id="navbar-toggle"
+          aria-controls="navbar-menu"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div id="navbar-menu" aria-labelledby="navbar-toggle">
+          <ul class="navbar-links">
+            <li class="navbar-item">
+              <a class="navbar-link scroll" target="about">About</a>
             </li>
-
-            <li class="clock-item">
-              <span class="count-number hours">20</span>
-              <p class="count-text">Hour</p>
+            <li class="navbar-item">
+              <a class="navbar-link scroll" target="mission">Mission</a>
             </li>
-
-            <li class="clock-item">
-              <span class="count-number minutes">20</span>
-              <p class="count-text">Min</p>
+            <li class="navbar-item">
+              <a class="navbar-link scroll" target="roadmap">Roadmap</a>
             </li>
-
-            <li class="clock-item">
-              <span class="count-number seconds">20</span>
-              <p class="count-text">Sec</p>
+            <li class="navbar-item">
+              <a class="navbar-link scroll" target="team">Team</a>
+            </li>
+            <li class="navbar-item">
+              <a class="navbar-link scroll" target="faq">FAQs</a>
+            </li>
+            <!-- <li class="navbar-item">
+              <a class="navbar-link join-discord-btn" href="#"
+                >JOIN OUR DISCORD</a
+              >
+            </li> -->
+            <li class="navbar-item">
+              <a
+                class="navbar-link join-discord-btn"
+                href="#"
+                id="connectWallet"
+                >Connect wallet</a
+              >
             </li>
           </ul>
-          <h2 id="subHeading">Pre-Sale Countdown</h2>
         </div>
-        <h1 id="mainHeading">NFT Drop Coming Soon!!</h1>
-        <p id="mainText">
-          A new batch of cute cats will be available very soon!
-        </p>
-        <a
-          id="actionButton"
-          href="https://discord.gg/A9CnsVzzkZ"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hero-btn btn"
-          ><span>Join the Catmmunity</span>
-        </a>
-        <div id="mintContainer" class="mint-container hidden">
-          <div class="info-container">
-            <div>
-              <h3>Supply</h3>
-              <p id="totalSupply">100</p>
-            </div>
-            <div>
-              <h3>Price Per Mint</h3>
-              <p id="pricePerMint">1 ETH</p>
-            </div>
-            <div>
-              <h3>Max</h3>
-              <p id="maxPerMint">5 per wallet</p>
-            </div>
-          </div>
-          <div class="mint-qty">
-            <span>
-              <button class="input-number-decrement btn" id="mintDecrement">–</button>
-              <input
-                id="mintInput"
-                class="input-number btn"
-                type="number"
-                value="1"
-                min="1"
-                max="5"
+      </nav>
+    </header>
+    <main>
+      <section id="banner">
+        <div class="container p-xs-0">
+          <div class="board-wrap">
+            <div class="content">
+              <img
+                src="./images/board.png"
+                class="img-responsive board"
+                alt=""
               />
-              <button class="input-number-increment btn" id="mintIncrement">+</button>
-            </span>
-            <button id="setQtyMax" class="btn">SET MAX</button>
+              <div class="copy">
+                <p>
+                  Join the <br />
+                  Crypto Runners
+                </p>
+                <div class="cta-wrap">
+                  <a class="join-now" data-custom-open="mint-modal">
+                    MINT NOW
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="total-price-container">
-            <h3>Total</h3>
-            <p id="totalPrice">.001 ETH</p>
-          </div>
-          <button id="mintButton" class="hero-btn btn mint-btn">Mint</button>
+          <img
+            src="./images/banner.gif"
+            class="img-responsive banner-gif hidden-xs"
+            alt=""
+          />
+          <img
+            src="./images/banner_mob.gif"
+            class="img-responsive banner-gif hidden-lg"
+            alt=""
+          />
         </div>
-      </div>
-      <div class="minted-container card show-card hidden">
-        <h1>🎉</h1>
-        <h2>Minted!</h2>
-        <p>Here's your trasaction link:</p>
-        <a id="mintedTxnBtn" href="" target="_blank" rel="noopener noreferrer">
-          <button class="hero-btn btn">View Transaction</button>
-        </a>
-        <p>View it in the collection:</p>
-        <a
-          id="mintedLinkBtn"
-          href="https://testnets.opensea.io/collection/teststackr-collection"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button class="hero-btn btn">View Collection</button>
-        </a>
-      </div>
-    </section>
+      </section>
+      <section id="about">
+        <div class="container">
+          <div class="copy">
+            <h2 class="head">ABOUT US</h2>
+            <h3 class="subhead">Crypto Runners</h3>
+            <p>
+              is a collection of 10,000 unique NFTs on the Ethereum blockchain,
+              that are created by a design house based in India specialising in
+              digital art and carpet manufacturing, working with skilled
+              artisans and weavers to create beautiful bespoke carpets.
+            </p>
+          </div>
+          <div class="image-wrap">
+            <img
+              src="./images/about.gif"
+              class="img-responsive"
+              alt="space warrior"
+            />
+          </div>
+        </div>
+      </section>
+      <section id="mission">
+        <div class="container reverse">
+          <div class="copy">
+            <h2 class="head">OUR MISSION</h2>
+            <h3 class="subhead">Begin Artisans' Charity</h3>
+            <p>
+              for India's skilled weavers. The weavers' magnificent
+              craftsmanship often goes unnoticed and is being greatly replaced
+              by machinery. This makes it difficult for them to make a living as
+              more people lose their jobs and age-old traditions fade away. As a
+              result, we want to assist them as best we can.
+            </p>
+          </div>
+          <div class="image-wrap">
+            <img
+              src="./images/mission.gif"
+              class="img-responsive"
+              alt="space warrior"
+            />
+          </div>
+        </div>
+      </section>
+      <section id="roadmap">
+        <div class="">
+          <div class="intro">
+            <h2 class="head">ROADMAP</h2>
+            <h3 class="subhead">Route to Benevolence</h3>
+          </div>
+          <div class="slider-wrap">
+            <div class="hidden-xs slider-wrap-lg">
+              <div class="item panel">
+                <div class="unit">
+                  <div class="content">
+                    <div class="num">01</div>
+                    <div class="copy">
+                      <h4>Launch</h4>
+                      <p>
+                        Release the NFTs, of which 5 will be airdropped randomly
+                        to early supporters. This is to show appreciation to the
+                        OGs that have supported us from day 1, so join our
+                        Discord community now!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="unit">
+                  <div class="content">
+                    <div class="num">02</div>
+                    <div class="copy">
+                      <h4>Appreciation</h4>
+                      <p>
+                        Giveaway exclusive merchandise to holders, starting with
+                        T-shirts, hats, and hoodies. You can even send us your
+                        minted Crypto Runner to be custom printed.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item panel">
+                <div class="unit">
+                  <div class="content">
+                    <div class="num">03</div>
+                    <div class="copy">
+                      <h4>Charity</h4>
+                      <p>
+                        Begin the Artisans' Charity. Fifty percent of the funds
+                        will be allocated towards the charity, and twenty
+                        percent will go towards marketing and spreading the word
+                        to generate more donations. Thirty percent will be used
+                        to facilitate the building and creation of further
+                        initiatives, potentially a Season 2 collection.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="unit">
+                  <div class="content">
+                    <div class="num">04</div>
+                    <div class="copy">
+                      <h4>Metaverse</h4>
+                      <p>
+                        Collaborate with a metaverse game developer to create a
+                        game centred on the Crypto Runners. A developer who owns
+                        a Crypto Runner will have a better chance of working on
+                        this project. Other holders will get exclusive access to
+                        the metaverse.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item panel">
+                <div class="unit">
+                  <div class="content">
+                    <div class="num">05</div>
+                    <div class="copy">
+                      <h4>Marathon</h4>
+                      <p>
+                        Organize marathons around the world to introduce Crypto
+                        Runners to the real world. Holders get discounted entry
+                        fees. Fifty percent of the profits will go to the
+                        Artisans' Charity. Forty percent of the profit generated
+                        will be used to develop an e-com store where artisans
+                        across India can sell their products with bare minimum
+                        costs and ten percent towards the founders of the
+                        project.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hidden-lg slider-wrap-xs">
+              <div class="item">
+                <div class="unit panel">
+                  <div class="content">
+                    <div class="num">01</div>
+                    <div class="copy">
+                      <h4>Launch</h4>
+                      <p>
+                        Release the NFTs, of which 5 will be airdropped randomly
+                        to early supporters. This is to show appreciation to the
+                        OGs that have supported us from day 1, so join our
+                        Discord community now!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="unit panel">
+                  <div class="content">
+                    <div class="num">02</div>
+                    <div class="copy">
+                      <h4>Appreciation</h4>
+                      <p>
+                        Giveaway exclusive merchandise to holders, starting with
+                        T-shirts, hats, and hoodies. You can even send us your
+                        minted Crypto Runner to be custom printed.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="unit panel">
+                  <div class="content">
+                    <div class="num">03</div>
+                    <div class="copy">
+                      <h4>Charity</h4>
+                      <p>
+                        Begin the Artisans' Charity. Fifty percent of the funds
+                        will be allocated towards the charity, and twenty
+                        percent will go towards marketing and spreading the word
+                        to generate more donations. Thirty percent will be used
+                        to facilitate the building and creation of further
+                        initiatives, potentially a Season 2 collection.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="unit panel">
+                  <div class="content">
+                    <div class="num">04</div>
+                    <div class="copy">
+                      <h4>Metaverse</h4>
+                      <p>
+                        Collaborate with a metaverse game developer to create a
+                        game centred on the Crypto Runners. A developer who owns
+                        a Crypto Runner will have a better chance of working on
+                        this project. Other holders will get exclusive access to
+                        the metaverse.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="unit panel">
+                  <div class="content">
+                    <div class="num">05</div>
+                    <div class="copy">
+                      <h4>Marathon</h4>
+                      <p>
+                        Organize marathons around the world to introduce Crypto
+                        Runners to the real world. Holders get discounted entry
+                        fees. Fifty percent of the profits will go to the
+                        Artisans' Charity. Forty percent of the profit generated
+                        will be used to develop an e-com store where artisans
+                        across India can sell their products with bare minimum
+                        costs and ten percent towards the founders of the
+                        project.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="team">
+        <div class="container">
+          <div class="intro">
+            <h2 class="head">TEAM</h2>
+            <h3 class="subhead">Get to Know Us</h3>
+          </div>
+          <div class="team-wrap">
+            <div class="unit">
+              <div class="content">
+                <img
+                  src="./images/03-min.png"
+                  class="img-responsive"
+                  alt="team member"
+                />
+                <h4>Co-founder</h4>
+                <p>Vivaan Kapoor</p>
+              </div>
+            </div>
+            <div class="unit">
+              <div class="content">
+                <img
+                  src="./images/01-min.png"
+                  class="img-responsive"
+                  alt="team member"
+                />
+                <h4>Co-founder</h4>
+                <p>Rahul Kapoor</p>
+              </div>
+            </div>
+            <div class="unit">
+              <div class="content">
+                <img
+                  src="./images/02-min.png"
+                  class="img-responsive"
+                  alt="team member"
+                />
+                <h4>Designer</h4>
+                <p>Rehan Nawaz</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="faq">
+        <div class="container">
+          <div class="intro">
+            <h2 class="head">FAQs</h2>
+            <h3 class="subhead">Everything You Need to Know!</h3>
+          </div>
+          <div class="accordion-wrap">
+            <div class="tabs">
+              <div class="tab">
+                <input type="checkbox" id="chck1" />
+                <label class="tab-label" for="chck1"
+                  >How can I join the Crypto Runners?</label
+                >
+                <div class="tab-content">
+                  You will be able to mint a Crypto Runner on our website. Join
+                  our Discord to be the first to find out.
+                </div>
+              </div>
+              <div class="tab">
+                <input type="checkbox" id="chck2" />
+                <label class="tab-label" for="chck2"
+                  >When will I be able to mint my Crypto Runners?</label
+                >
+                <div class="tab-content">The date will be announced soon.</div>
+              </div>
+              <div class="tab">
+                <input type="checkbox" id="chck3" />
+                <label class="tab-label" for="chck3"
+                  >How many Crypto Runners will be available?</label
+                >
+                <div class="tab-content">10,000 unique NFTs.</div>
+              </div>
+              <div class="tab">
+                <input type="checkbox" id="chck4" />
+                <label class="tab-label" for="chck4"
+                  >What blockchain will you be using?</label
+                >
+                <div class="tab-content">The Ethereum Blockchain</div>
+              </div>
+              <div class="tab">
+                <input type="checkbox" id="chck5" />
+                <label class="tab-label" for="chck5"
+                  >Where will I be able to view my NFTs?</label
+                >
+                <div class="tab-content">
+                  Once you mint your Crypto Runners, all you will need to do is
+                  log into your OpenSea account to view your collection.
+                </div>
+              </div>
+              <div class="tab">
+                <input type="checkbox" id="chck6" />
+                <label class="tab-label" for="chck6"
+                  >What are your secondary royalty fees?</label
+                >
+                <div class="tab-content">Five percent</div>
+              </div>
+              <div class="tab">
+                <input type="checkbox" id="chck7" />
+                <label class="tab-label" for="chck7"
+                  >Where will the funds raised go?</label
+                >
+                <div class="tab-content">
+                  The funds will be donated to the Artisans' Charity.
+                </div>
+              </div>
+              <div class="tab">
+                <input type="checkbox" id="chck8" />
+                <label class="tab-label" for="chck8"
+                  >Will you do giveaways?</label
+                >
+                <div class="tab-content">
+                  Of course! Check out the giveaways channel in our discord for
+                  more information.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <div id="spinner" class="dot-spin"></div>
 
-    <div class="splide">
-      <div class="splide__track">
-        <ul class="splide__list">
-          <li class="splide__slide">
-            <img src="images/slider/0.png" />
+    <div class="countdown card hidden">
+      <div id="countdown" class="">
+        <ul class="count-down" data-date="">
+          <li class="clock-item">
+            <span class="count-number days">20</span>
+            <p class="count-text">Days</p>
           </li>
-          <li class="splide__slide">
-            <img src="images/slider/1.png" />
+
+          <li class="clock-item">
+            <span class="count-number hours">20</span>
+            <p class="count-text">Hour</p>
           </li>
-          <li class="splide__slide">
-            <img src="images/slider/2.png" />
+
+          <li class="clock-item">
+            <span class="count-number minutes">20</span>
+            <p class="count-text">Min</p>
           </li>
-          <li class="splide__slide">
-            <img src="images/slider/3.png" />
-          </li>
-          <li class="splide__slide">
-            <img src="images/slider/4.png" />
-          </li>
-          <li class="splide__slide">
-            <img src="images/slider/5.png" />
-          </li>
-          <li class="splide__slide">
-            <img src="images/slider/6.png" />
-          </li>
-          <li class="splide__slide">
-            <img src="images/slider/7.png" />
-          </li>
-          <li class="splide__slide">
-            <img src="images/slider/8.png" />
+
+          <li class="clock-item">
+            <span class="count-number seconds">20</span>
+            <p class="count-text">Sec</p>
           </li>
         </ul>
+        <h2 id="subHeading">Pre-Sale Countdown</h2>
       </div>
     </div>
 
-    <script src="js/metamask-onboarding.bundle.js"></script>
-    <script src="js/web3.min.js"></script>
-    <script src="js/splide.min.js"></script>
-    <script src="js/constants.js"></script>
-    <script src="js/abi.js"></script>
-    <script src="js/countdown.js"></script>
-    <script src="js/app.js"></script>
+    <footer>
+      <div class="logo-wrap">
+        <img src="./images/Logo-min.png" class="img-responsive" alt="" />
+      </div>
+      <div class="social-wrap">
+        <!-- <a href="#" class="social-link">
+          <i class="fa-brands fa-instagram"></i>
+        </a> -->
+        <a
+          href="https://discord.gg/JKpD46htuE"
+          class="social-link"
+          target="_blank"
+        >
+          <i class="fa-brands fa-discord"></i>
+        </a>
+        <a href="#" class="social-link">
+          <i class="fa-brands fa-twitter"></i>
+        </a>
+        <!-- <a href="#" class="social-link">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a> -->
+      </div>
+      <div class="creator">
+        <img
+          src="./images/blink_logo-min.png"
+          alt="blink logo"
+          class="img-responsive blink-logo"
+        />
+        <p>
+          Powered by
+          <a href="https://blinkdigital.in/" target="_blank">Blink Digital</a>
+        </p>
+      </div>
+    </footer>
+
+    <div class="modal micromodal-slide" id="mint-modal" aria-hidden="true">
+      <div class="modal__overlay" tabindex="-1" data-custom-close>
+        <div
+          class="modal__container"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="mint-modal-title"
+        >
+          <header class="modal__header">
+            <h2 class="modal__title" id="mint-modal-title"></h2>
+            <button
+              class="modal__close minter_close hidden"
+              aria-label="Close modal"
+              data-custom-close
+            ></button>
+          </header>
+          <main class="modal__content" id="mint-modal-content">
+            <p class="not_whitelisted hidden">
+              You are not whitelisted for the pre-sale.
+            </p>
+            <p class="already_minted hidden">
+              You've already claimed your whitelist mint.
+            </p>
+            <div id="mintContainer" class="mint-container hidden">
+              <div class="info-container">
+                <div>
+                  <h3>Supply</h3>
+                  <p id="totalSupply">100</p>
+                </div>
+                <div>
+                  <h3>Price Per Mint</h3>
+                  <p id="pricePerMint">1 ETH</p>
+                </div>
+                <div>
+                  <h3>Max</h3>
+                  <p id="maxPerMint">5 per wallet</p>
+                </div>
+              </div>
+              <div class="mint-qty">
+                <span>
+                  <button class="input-number-decrement btn" id="mintDecrement">
+                    –
+                  </button>
+                  <input
+                    id="mintInput"
+                    class="input-number btn"
+                    type="number"
+                    value="1"
+                    min="1"
+                    max="5"
+                  />
+                  <button class="input-number-increment btn" id="mintIncrement">
+                    +
+                  </button>
+                </span>
+                <button id="setQtyMax" class="common-cta">SET MAX</button>
+              </div>
+              <div class="total-price-container">
+                <h3>Total</h3>
+                <p id="totalPrice">.001 ETH</p>
+              </div>
+              <button id="mintButton" class="common-cta">Mint</button>
+            </div>
+            <div class="minted-container card show-card hidden">
+              <h2>Minted!</h2>
+              <p>Here's your trasaction link:</p>
+              <a
+                id="mintedTxnBtn"
+                href=""
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button class="common-cta">View Transaction</button>
+              </a>
+              <p>View it in the collection:</p>
+              <a
+                id="mintedLinkBtn"
+                href="https://testnets.opensea.io/collection/nftpatel"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button class="common-cta">View Collection</button>
+              </a>
+            </div>
+            <div class="fail-status hidden">
+              <p style="text-align: center">Transaction failed</p>
+            </div>
+            <div class="not-connected">
+              <p>Please connect to Metamask</p>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    <script src="./js/TweenMax.min.js"></script>
+    <script src="./js/gsap.min.js"></script>
+    <script src="./js/ScrollTrigger.min.js"></script>
+    <script src="./js/metamask-onboarding.bundle.js"></script>
+    <script src="./js/web3.min.js"></script>
+    <script src="./js/constants.js"></script>
+    <script src="./js/countdown.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/abi.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
